@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AEAE705B20D8CD3400F2629D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE705A20D8CD3400F2629D /* AppDelegate.m */; };
+		AEAE705E20D8CD3400F2629D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE705D20D8CD3400F2629D /* ViewController.m */; };
+		AEAE706120D8CD3400F2629D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAE705F20D8CD3400F2629D /* Main.storyboard */; };
+		AEAE706320D8CD3400F2629D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEAE706220D8CD3400F2629D /* Assets.xcassets */; };
+		AEAE706620D8CD3400F2629D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAE706420D8CD3400F2629D /* LaunchScreen.storyboard */; };
+		AEAE706920D8CD3500F2629D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE706820D8CD3500F2629D /* main.m */; };
+		AEAE707320D8CD3500F2629D /* BRDownLoadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE707220D8CD3500F2629D /* BRDownLoadTests.m */; };
+		AEAE707E20D8CD3500F2629D /* BRDownLoadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE707D20D8CD3500F2629D /* BRDownLoadUITests.m */; };
+		AEAE709320D8CE0500F2629D /* NSString+BRMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE709220D8CE0500F2629D /* NSString+BRMD5.m */; };
+		AEAE709620D8D0D000F2629D /* BRDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE709520D8D0D000F2629D /* BRDownLoader.m */; };
+		AEAE709920D8D0FC00F2629D /* BRFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE709820D8D0FC00F2629D /* BRFileTool.m */; };
+		AEAE709C20D8D72F00F2629D /* BRDownLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE709B20D8D72F00F2629D /* BRDownLoaderManager.m */; };
+		AEAE709F20D8E91400F2629D /* BRDownLoadConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE709E20D8E91400F2629D /* BRDownLoadConfiguration.m */; };
+		AEAE70A020D8FC9500F2629D /* BRDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE709520D8D0D000F2629D /* BRDownLoader.m */; };
+		AEAE70A320D9095B00F2629D /* DownLoadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE70A220D9095B00F2629D /* DownLoadTableViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AEAE706F20D8CD3500F2629D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEAE704E20D8CD3400F2629D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEAE705520D8CD3400F2629D;
+			remoteInfo = BRDownLoad;
+		};
+		AEAE707A20D8CD3500F2629D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEAE704E20D8CD3400F2629D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEAE705520D8CD3400F2629D;
+			remoteInfo = BRDownLoad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AEAE705620D8CD3400F2629D /* BRDownLoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BRDownLoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEAE705920D8CD3400F2629D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AEAE705A20D8CD3400F2629D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AEAE705C20D8CD3400F2629D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AEAE705D20D8CD3400F2629D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AEAE706020D8CD3400F2629D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AEAE706220D8CD3400F2629D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AEAE706520D8CD3400F2629D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AEAE706720D8CD3400F2629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEAE706820D8CD3500F2629D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AEAE706E20D8CD3500F2629D /* BRDownLoadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BRDownLoadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEAE707220D8CD3500F2629D /* BRDownLoadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRDownLoadTests.m; sourceTree = "<group>"; };
+		AEAE707420D8CD3500F2629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEAE707920D8CD3500F2629D /* BRDownLoadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BRDownLoadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEAE707D20D8CD3500F2629D /* BRDownLoadUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRDownLoadUITests.m; sourceTree = "<group>"; };
+		AEAE707F20D8CD3500F2629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEAE709120D8CE0500F2629D /* NSString+BRMD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BRMD5.h"; sourceTree = "<group>"; };
+		AEAE709220D8CE0500F2629D /* NSString+BRMD5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BRMD5.m"; sourceTree = "<group>"; };
+		AEAE709420D8D0D000F2629D /* BRDownLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRDownLoader.h; sourceTree = "<group>"; };
+		AEAE709520D8D0D000F2629D /* BRDownLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRDownLoader.m; sourceTree = "<group>"; };
+		AEAE709720D8D0FC00F2629D /* BRFileTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRFileTool.h; sourceTree = "<group>"; };
+		AEAE709820D8D0FC00F2629D /* BRFileTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRFileTool.m; sourceTree = "<group>"; };
+		AEAE709A20D8D72F00F2629D /* BRDownLoaderManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRDownLoaderManager.h; sourceTree = "<group>"; };
+		AEAE709B20D8D72F00F2629D /* BRDownLoaderManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRDownLoaderManager.m; sourceTree = "<group>"; };
+		AEAE709D20D8E91400F2629D /* BRDownLoadConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRDownLoadConfiguration.h; sourceTree = "<group>"; };
+		AEAE709E20D8E91400F2629D /* BRDownLoadConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRDownLoadConfiguration.m; sourceTree = "<group>"; };
+		AEAE70A120D9095B00F2629D /* DownLoadTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownLoadTableViewCell.h; sourceTree = "<group>"; };
+		AEAE70A220D9095B00F2629D /* DownLoadTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownLoadTableViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AEAE705320D8CD3400F2629D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAE706B20D8CD3500F2629D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAE707620D8CD3500F2629D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AEAE704D20D8CD3400F2629D = {
+			isa = PBXGroup;
+			children = (
+				AEAE705820D8CD3400F2629D /* BRDownLoad */,
+				AEAE707120D8CD3500F2629D /* BRDownLoadTests */,
+				AEAE707C20D8CD3500F2629D /* BRDownLoadUITests */,
+				AEAE705720D8CD3400F2629D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AEAE705720D8CD3400F2629D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEAE705620D8CD3400F2629D /* BRDownLoad.app */,
+				AEAE706E20D8CD3500F2629D /* BRDownLoadTests.xctest */,
+				AEAE707920D8CD3500F2629D /* BRDownLoadUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEAE705820D8CD3400F2629D /* BRDownLoad */ = {
+			isa = PBXGroup;
+			children = (
+				AEAE708B20D8CDAA00F2629D /* Classes */,
+				AEAE705920D8CD3400F2629D /* AppDelegate.h */,
+				AEAE705A20D8CD3400F2629D /* AppDelegate.m */,
+				AEAE705C20D8CD3400F2629D /* ViewController.h */,
+				AEAE705D20D8CD3400F2629D /* ViewController.m */,
+				AEAE70A120D9095B00F2629D /* DownLoadTableViewCell.h */,
+				AEAE70A220D9095B00F2629D /* DownLoadTableViewCell.m */,
+				AEAE705F20D8CD3400F2629D /* Main.storyboard */,
+				AEAE706220D8CD3400F2629D /* Assets.xcassets */,
+				AEAE706420D8CD3400F2629D /* LaunchScreen.storyboard */,
+				AEAE706720D8CD3400F2629D /* Info.plist */,
+				AEAE706820D8CD3500F2629D /* main.m */,
+			);
+			path = BRDownLoad;
+			sourceTree = "<group>";
+		};
+		AEAE707120D8CD3500F2629D /* BRDownLoadTests */ = {
+			isa = PBXGroup;
+			children = (
+				AEAE707220D8CD3500F2629D /* BRDownLoadTests.m */,
+				AEAE707420D8CD3500F2629D /* Info.plist */,
+			);
+			path = BRDownLoadTests;
+			sourceTree = "<group>";
+		};
+		AEAE707C20D8CD3500F2629D /* BRDownLoadUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AEAE707D20D8CD3500F2629D /* BRDownLoadUITests.m */,
+				AEAE707F20D8CD3500F2629D /* Info.plist */,
+			);
+			path = BRDownLoadUITests;
+			sourceTree = "<group>";
+		};
+		AEAE708B20D8CDAA00F2629D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AEAE708C20D8CDAA00F2629D /* Tools */,
+				AEAE708D20D8CDAA00F2629D /* DownLoadMoudle */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AEAE708C20D8CDAA00F2629D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AEAE709120D8CE0500F2629D /* NSString+BRMD5.h */,
+				AEAE709220D8CE0500F2629D /* NSString+BRMD5.m */,
+				AEAE709720D8D0FC00F2629D /* BRFileTool.h */,
+				AEAE709820D8D0FC00F2629D /* BRFileTool.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		AEAE708D20D8CDAA00F2629D /* DownLoadMoudle */ = {
+			isa = PBXGroup;
+			children = (
+				AEAE709420D8D0D000F2629D /* BRDownLoader.h */,
+				AEAE709520D8D0D000F2629D /* BRDownLoader.m */,
+				AEAE709A20D8D72F00F2629D /* BRDownLoaderManager.h */,
+				AEAE709B20D8D72F00F2629D /* BRDownLoaderManager.m */,
+				AEAE709D20D8E91400F2629D /* BRDownLoadConfiguration.h */,
+				AEAE709E20D8E91400F2629D /* BRDownLoadConfiguration.m */,
+			);
+			path = DownLoadMoudle;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AEAE705520D8CD3400F2629D /* BRDownLoad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEAE708220D8CD3500F2629D /* Build configuration list for PBXNativeTarget "BRDownLoad" */;
+			buildPhases = (
+				AEAE705220D8CD3400F2629D /* Sources */,
+				AEAE705320D8CD3400F2629D /* Frameworks */,
+				AEAE705420D8CD3400F2629D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BRDownLoad;
+			productName = BRDownLoad;
+			productReference = AEAE705620D8CD3400F2629D /* BRDownLoad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AEAE706D20D8CD3500F2629D /* BRDownLoadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEAE708520D8CD3500F2629D /* Build configuration list for PBXNativeTarget "BRDownLoadTests" */;
+			buildPhases = (
+				AEAE706A20D8CD3500F2629D /* Sources */,
+				AEAE706B20D8CD3500F2629D /* Frameworks */,
+				AEAE706C20D8CD3500F2629D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEAE707020D8CD3500F2629D /* PBXTargetDependency */,
+			);
+			name = BRDownLoadTests;
+			productName = BRDownLoadTests;
+			productReference = AEAE706E20D8CD3500F2629D /* BRDownLoadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AEAE707820D8CD3500F2629D /* BRDownLoadUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEAE708820D8CD3500F2629D /* Build configuration list for PBXNativeTarget "BRDownLoadUITests" */;
+			buildPhases = (
+				AEAE707520D8CD3500F2629D /* Sources */,
+				AEAE707620D8CD3500F2629D /* Frameworks */,
+				AEAE707720D8CD3500F2629D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEAE707B20D8CD3500F2629D /* PBXTargetDependency */,
+			);
+			name = BRDownLoadUITests;
+			productName = BRDownLoadUITests;
+			productReference = AEAE707920D8CD3500F2629D /* BRDownLoadUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AEAE704E20D8CD3400F2629D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Y_T;
+				TargetAttributes = {
+					AEAE705520D8CD3400F2629D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					AEAE706D20D8CD3500F2629D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AEAE705520D8CD3400F2629D;
+					};
+					AEAE707820D8CD3500F2629D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AEAE705520D8CD3400F2629D;
+					};
+				};
+			};
+			buildConfigurationList = AEAE705120D8CD3400F2629D /* Build configuration list for PBXProject "BRDownLoad" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AEAE704D20D8CD3400F2629D;
+			productRefGroup = AEAE705720D8CD3400F2629D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AEAE705520D8CD3400F2629D /* BRDownLoad */,
+				AEAE706D20D8CD3500F2629D /* BRDownLoadTests */,
+				AEAE707820D8CD3500F2629D /* BRDownLoadUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AEAE705420D8CD3400F2629D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEAE706620D8CD3400F2629D /* LaunchScreen.storyboard in Resources */,
+				AEAE706320D8CD3400F2629D /* Assets.xcassets in Resources */,
+				AEAE706120D8CD3400F2629D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAE706C20D8CD3500F2629D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAE707720D8CD3500F2629D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AEAE705220D8CD3400F2629D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEAE709F20D8E91400F2629D /* BRDownLoadConfiguration.m in Sources */,
+				AEAE709320D8CE0500F2629D /* NSString+BRMD5.m in Sources */,
+				AEAE70A320D9095B00F2629D /* DownLoadTableViewCell.m in Sources */,
+				AEAE705E20D8CD3400F2629D /* ViewController.m in Sources */,
+				AEAE709C20D8D72F00F2629D /* BRDownLoaderManager.m in Sources */,
+				AEAE706920D8CD3500F2629D /* main.m in Sources */,
+				AEAE705B20D8CD3400F2629D /* AppDelegate.m in Sources */,
+				AEAE709620D8D0D000F2629D /* BRDownLoader.m in Sources */,
+				AEAE709920D8D0FC00F2629D /* BRFileTool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAE706A20D8CD3500F2629D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEAE70A020D8FC9500F2629D /* BRDownLoader.m in Sources */,
+				AEAE707320D8CD3500F2629D /* BRDownLoadTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAE707520D8CD3500F2629D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEAE707E20D8CD3500F2629D /* BRDownLoadUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AEAE707020D8CD3500F2629D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEAE705520D8CD3400F2629D /* BRDownLoad */;
+			targetProxy = AEAE706F20D8CD3500F2629D /* PBXContainerItemProxy */;
+		};
+		AEAE707B20D8CD3500F2629D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEAE705520D8CD3400F2629D /* BRDownLoad */;
+			targetProxy = AEAE707A20D8CD3500F2629D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AEAE705F20D8CD3400F2629D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEAE706020D8CD3400F2629D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AEAE706420D8CD3400F2629D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEAE706520D8CD3400F2629D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AEAE708020D8CD3500F2629D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AEAE708120D8CD3500F2629D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AEAE708320D8CD3500F2629D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BRDownLoad/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "T-Y.BRDownLoad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AEAE708420D8CD3500F2629D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BRDownLoad/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "T-Y.BRDownLoad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AEAE708620D8CD3500F2629D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BRDownLoadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "T-Y.BRDownLoadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BRDownLoad.app/BRDownLoad";
+			};
+			name = Debug;
+		};
+		AEAE708720D8CD3500F2629D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BRDownLoadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "T-Y.BRDownLoadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BRDownLoad.app/BRDownLoad";
+			};
+			name = Release;
+		};
+		AEAE708920D8CD3500F2629D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BRDownLoadUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "T-Y.BRDownLoadUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BRDownLoad;
+			};
+			name = Debug;
+		};
+		AEAE708A20D8CD3500F2629D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BRDownLoadUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "T-Y.BRDownLoadUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BRDownLoad;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AEAE705120D8CD3400F2629D /* Build configuration list for PBXProject "BRDownLoad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEAE708020D8CD3500F2629D /* Debug */,
+				AEAE708120D8CD3500F2629D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEAE708220D8CD3500F2629D /* Build configuration list for PBXNativeTarget "BRDownLoad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEAE708320D8CD3500F2629D /* Debug */,
+				AEAE708420D8CD3500F2629D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEAE708520D8CD3500F2629D /* Build configuration list for PBXNativeTarget "BRDownLoadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEAE708620D8CD3500F2629D /* Debug */,
+				AEAE708720D8CD3500F2629D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEAE708820D8CD3500F2629D /* Build configuration list for PBXNativeTarget "BRDownLoadUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEAE708920D8CD3500F2629D /* Debug */,
+				AEAE708A20D8CD3500F2629D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AEAE704E20D8CD3400F2629D /* Project object */;
+}
