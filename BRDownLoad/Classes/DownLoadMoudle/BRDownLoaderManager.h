@@ -10,20 +10,28 @@
 #import "BRDownLoader.h"
 @class BRDownLoadConfiguration;
 
-
+static NSString * _Nullable const BRDownLoadSuccedNotification;
+static NSString * _Nullable const BRDownLoadFailedNotification;
+static NSString * _Nullable const BRDownLoadPauseNotification;
+//static NSString * _
 //extern BRDownLoader * _Nullable  getDownLoader(NSURL * _Nullable url);
 
 @interface BRDownLoaderManager : NSObject
 
 /**
- 	key(md5(url)) : vaule (BRDownLoader)
+ 	key(md5(url)) url MD5值 : vaule (BRDownLoader) 下载器
  */
-@property (nonatomic,strong) NSMutableDictionary * 					downLoadInfo;
+@property (nonatomic,strong) NSMutableDictionary * _Nullable 				downLoadInfo;
+
+/**
+ 	key(md5(url)) url MD5值 : vaule (fileMD5) 文件的MD5值
+ */
+@property (nonatomic,strong,) NSMutableDictionary *_Nullable						    downFileMD5Info;
 
 /**
  配置下载管理
  */
-@property (nonatomic, strong, readonly) BRDownLoadConfiguration *  	configuration;
+@property (nonatomic, strong, readonly) BRDownLoadConfiguration *_Nullable  downLoadConfiguration;
 
 
 - (void)br_DownLoader:(NSURL * _Nullable)url
@@ -44,7 +52,7 @@
 /**
  获取实例对象
 
- @return <#return value description#>
+ @return 
  */
 + (instancetype)shareInstance;
 
@@ -52,10 +60,10 @@
 /**
  初始化  返回单例对象
 
- @param configuration 下载配置
+ @param configuration 下载配置 
  @return 单例对象
  */
-+ (instancetype)initWithDownLoadConfiguration: (BRDownLoadConfiguration* ) configuration;
++ (instancetype)instanceWithDownLoadConfiguration: (BRDownLoadConfiguration* ) configuration;
 //+ (instancetype)
 
 @end

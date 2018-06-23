@@ -13,11 +13,26 @@
 - (instancetype)init {
     self = [super init];
     if(self){
-        self.DownLoadCount = 1;
+        self.maxDownLoadCount = 1;
         self.verifyMD5 = YES;
         self.configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        self.operationQueue = [NSOperationQueue mainQueue];
     }
     return self;
 }
+
+
+- (void)setMaxDownLoadCount:(int)maxDownLoadCount {
+    
+    if (maxDownLoadCount > 9) {
+        maxDownLoadCount = 9;
+    }
+    
+    if (maxDownLoadCount != _maxDownLoadCount) {
+        _maxDownLoadCount = maxDownLoadCount > 0 ? maxDownLoadCount : 1;
+    }
+    
+}
+
 
 @end

@@ -29,9 +29,35 @@ typedef void(^br_StateChangeBlock)(BRDownLoadState state);
 
 @interface BRDownLoader : NSObject
 
+/**
+ 获取当前文件的下载状态
+ */
 @property (nonatomic, assign) 			BRDownLoadState state;
+
+/**
+ 获取当前文件下载进度
+ */
 @property (nonatomic, assign, readonly) float progress;
+
+/**
+ 获取当前下载的大小
+ */
+@property (nonatomic, assign, readonly) NSUInteger currentSize;
+
+/**
+ 当前下载的url
+ */
 @property (nonatomic, strong, readonly) NSURL *url;
+
+/**
+ 当前下载 或者完成文件的MD5  可以为空
+ */
+@property (nonatomic, strong, readonly) NSString *fileMD5;
+
+/**
+ 下载完成移动到那个文件夹
+ */
+@property (nonatomic, strong, readonly) NSString *downLoadFilePath;
 
 @property (nonatomic, copy) br_DownLoadInfoTypeBlock downLoadInfo;
 @property (nonatomic, copy) br_StateChangeBlock stateChange;
@@ -40,11 +66,27 @@ typedef void(^br_StateChangeBlock)(BRDownLoadState state);
 @property (nonatomic, copy) br_FailedBlock faildBlock;
 
 
+/**
+
+
+ @param url 资源路径
+ @param downLoadInfo 获取资源总大小
+ @param progress 获取下载进度
+ @param success 获取成功信息
+ @param failed 获取失败信息
+ */
 - (void)br_DownLoader:(NSURL *)url
          		downLoadInfo:(br_DownLoadInfoTypeBlock)downLoadInfo
              	progress:(br_ProgressBlock)progress
               	success:(br_SuccessBlock)success
                	failed:(br_FailedBlock)failed;
+
+//- (void)br_DownLoader:(NSURL *)url
+//
+//         downLoadInfo:(br_DownLoadInfoTypeBlock)downLoadInfo
+//             progress:(br_ProgressBlock)progress
+//              success:(br_SuccessBlock)success
+//               failed:(br_FailedBlock)failed;
 
 
 /**

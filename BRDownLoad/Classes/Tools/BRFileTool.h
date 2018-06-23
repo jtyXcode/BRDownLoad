@@ -12,6 +12,7 @@ typedef void(^BRMoveFileCompleteBlock)(NSError *error);
 typedef void(^BRRemoveFileCompleteBlock)(NSError *error);
 
 @interface BRFileTool : NSObject
+
 /**
  文件是否存在
 
@@ -48,4 +49,13 @@ typedef void(^BRRemoveFileCompleteBlock)(NSError *error);
  */
 + (void)br_removeFile:(NSString *)filePath complete:(BRMoveFileCompleteBlock)complete;
 
+
+/**
+ 获取路径文件的MD5
+
+ @param filePath 文件地址
+ @param dataSize 文件大小
+ @return 文件的MD5 可能为nil
+ */
++ (NSString *)br_FileMD5HashCreateWithPath:(NSString *)filePath chunkSizeForReadingData:(size_t)dataSize;
 @end

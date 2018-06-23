@@ -9,6 +9,7 @@
 #import "BRDownLoader.h"
 #import "BRFileTool.h"
 #import "BRDownLoaderManager.h"
+#import "BRDownLoadConfiguration.h"
 
 inline NSString *BR_CacheFilePath () {
     return NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
@@ -19,16 +20,18 @@ inline NSString *BR_TempCacheFilePath () {
 }
 
 @interface BRDownLoader () <NSURLSessionDataDelegate>
-@property (nonatomic, assign) long long tmpSize;
-@property (nonatomic, assign) long long totalSize;
-@property (nonatomic, assign) float progress;
+@property (nonatomic, assign) long long 				tmpSize;
+@property (nonatomic, assign) long long 				totalSize;
+@property (nonatomic, assign) float 					progress;
+//@property (nonatomic, assign) float                        
 
-@property (nonatomic, strong) NSURL *url;
-@property (nonatomic, strong) NSURLSession *session;
-@property (nonatomic, strong) NSString *downLoadFilePath;
-@property (nonatomic, strong) NSString *tempDownLoadFilePath;
-@property (nonatomic, strong) NSOutputStream *outputStream;
-@property (nonatomic, strong) NSURLSessionDataTask *sessionDataTask;
+@property (nonatomic, strong, readwrite) NSURL *		url;
+@property (nonatomic, strong, readwrite) NSString *		fileMD5;
+@property (nonatomic, strong) NSURLSession *			session;
+@property (nonatomic, strong) NSString *				downLoadFilePath;
+@property (nonatomic, strong) NSString *				tempDownLoadFilePath;
+@property (nonatomic, strong) NSOutputStream *			outputStream;
+@property (nonatomic, strong) NSURLSessionDataTask *	sessionDataTask;
 
 @end
 
@@ -37,14 +40,10 @@ inline NSString *BR_TempCacheFilePath () {
 
 - (NSURLSession *)session {
     if(_session == nil) {
-        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        _session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+        _session = [NSURLSession sessionWithConfiguration:[BRDownLoaderManager shareInstance].downLoadConfiguration.configuration delegate:self delegateQueue:[BRDownLoaderManager shareInstance].downLoadConfiguration.operationQueue];
     }
     return _session;
 }
-
-
-
 
 
 - (void)br_DownLoader:(NSURL *)url
@@ -63,6 +62,7 @@ inline NSString *BR_TempCacheFilePath () {
 }
 
 - (void)br_downLoader:(NSURL *)url {
+    
     if([url isEqual:self.sessionDataTask.originalRequest.URL]){
         
         if(self.state == BRDownLoadStatePause){
@@ -79,6 +79,7 @@ inline NSString *BR_TempCacheFilePath () {
     
     if([BRFileTool br_fileExists:self.downLoadFilePath]) {
         self.state = BRDownLoadStatePauseSuccess;
+        [[NSNotificationCenter defaultCenter] postNotificationName:BRDownLoadSuccedNotification object:self];
         return;
     }
     
@@ -95,14 +96,19 @@ inline NSString *BR_TempCacheFilePath () {
 
 - (void)br_pauseCurrentTask {
     if(self.state == BRDownLoadStateDownLoading) {
-        self.state = BRDownLoadStateDownLoading;
+        self.state = BRDownLoadStatePause;
         [self.sessionDataTask suspend];
+        [[NSNotificationCenter defaultCenter] postNotificationName:BRDownLoadFailedNotification object:self];
     }
 }
 
 - (void)br_resumeCurrentTask {
-    
-    if(self.sessionDataTask && (self.state == BRDownLoadStatePause || self.state == BRDownLoadStateWaiting)) {
+
+    /*
+		如果自己点击 需要实现
+     1.需要获取
+     */
+    if(self.sessionDataTask && (self.state == BRDownLoadStatePause || self.state == BRDownLoadStateWaiting || self.state == BRDownLoadStatePauseFailed)) {
         [self.sessionDataTask resume];
         self.state = BRDownLoadStateDownLoading;
     }
@@ -111,19 +117,24 @@ inline NSString *BR_TempCacheFilePath () {
 - (void)br_cancelCurrentTask {
     if(self.state == BRDownLoadStatePauseSuccess) return;
     [self.session invalidateAndCancel];
-    self.session = nil;
-//    self.stateChange = nil;
-//    self.progressChange = nil;
-//    self.successBlock = nil;
-//    self.faildBlock = nil;
-
+    [self clearUnusable];
 }
+
 
 - (void)br_cancelAndClean {
     [self br_cancelCurrentTask];
    	self.state == BRDownLoadStatePauseSuccess ? [BRFileTool br_removeFile:self.downLoadFilePath complete:nil] : [BRFileTool br_removeFile:self.tempDownLoadFilePath complete:nil];
     
 }
+
+- (void)clearUnusable{
+    self.session = nil;
+    self.stateChange = nil;
+    self.progressChange = nil;
+    self.successBlock = nil;
+    self.faildBlock = nil;
+}
+
 
 #pragma mark - NSURLSessionDataDelegate
 -(void)URLSession:(NSURLSession *)session
@@ -143,17 +154,27 @@ inline NSString *BR_TempCacheFilePath () {
     if(_tmpSize > _totalSize) {
         [BRFileTool br_removeFile:self.tempDownLoadFilePath complete:nil];
         completionHandler(NSURLSessionResponseCancel);
-        [self downLoadWithURL:response.URL offset:0];
+//        [self downLoadWithURL:response.URL offset:0];
         return;
     }
     
     if(_tmpSize == _totalSize) {
-        //先做判断
+        
+        //先获取是否需要MD5校验
+        if([BRDownLoaderManager shareInstance].downLoadConfiguration.isVerifyMD5 && ![[BRFileTool br_FileMD5HashCreateWithPath:_tempDownLoadFilePath chunkSizeForReadingData:[BRFileTool br_fileSize:_tempDownLoadFilePath]] isEqualToString:_fileMD5]){
+            //清除重新下载  需要重新添加下载队列  添加进入失败队列中
+            //
+            [BRFileTool br_removeFile:self.tempDownLoadFilePath complete:nil];
+            completionHandler(NSURLSessionResponseCancel);
+            self.state = BRDownLoadStatePauseFailed;
+            return;
+        }
         
         [BRFileTool br_moveFile:self.tempDownLoadFilePath toPath:self.downLoadFilePath complete:nil];
         completionHandler(NSURLSessionResponseCancel);
         self.state = BRDownLoadStatePauseSuccess;
         return;
+  
     }
     
     

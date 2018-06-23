@@ -31,17 +31,17 @@
 //    [self.view addSubview:_tableView];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [[BRDownLoaderManager shareInstance] br_DownLoader:[NSURL URLWithString:@"http://free2.macx.cn:8281/tools/photo/SnapNDragPro418.dmg"]
-                                          downLoadInfo:^(long long totalSize) {
-        										NSLog(@"totalSize = %lld",totalSize);
-    										} progress:^(float progress) {
-        										NSLog(@"hh = %.2f",progress);
-    										} success:^(NSString *filePath) {
-                                                NSLog(@"s = %@",filePath);
-                                            } failed:^(NSString *tmpFilePath) {
-                                                NSLog(@"error = %@",tmpFilePath);
-
-                                            }];
+//    [[BRDownLoaderManager shareInstance] br_DownLoader:[NSURL URLWithString:@"http://free2.macx.cn:8281/tools/photo/SnapNDragPro418.dmg"]
+//                                          downLoadInfo:^(long long totalSize) {
+//                                                NSLog(@"totalSize = %lld",totalSize);
+//                                            } progress:^(float progress) {
+//                                                NSLog(@"hh = %.2f",progress);
+//                                            } success:^(NSString *filePath) {
+//                                                NSLog(@"s = %@",filePath);
+//                                            } failed:^(NSString *tmpFilePath) {
+//                                                NSLog(@"error = %@",tmpFilePath);
+//
+//                                            }];
     
     
     
